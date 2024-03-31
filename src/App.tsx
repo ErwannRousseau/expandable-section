@@ -9,7 +9,7 @@ export function App() {
         malesuada, libero nec ultricies tincidunt, nunc felis tincidunt turpis,
         vel tincidunt nunc ante sit amet elit. Nulla facilisi. Donec malesuada,
       </ExpandableDemo>
-      <ExpandableDemo>
+      <ExpandableDemo lineClamp={4}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
         consectetur, libero nec ultricies tincidunt, nunc felis tincidunt
         turpis, vel tincidunt nunc ante sit amet elit. Nulla facilisi. Donec
