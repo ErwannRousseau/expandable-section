@@ -66,20 +66,20 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "collapsible-down": {
-          from: { height: "var(--collapsible-collapsed-height)" },
-          to: { height: "var(--collapsible-content-height)" },
+        "expandable-down": {
+          from: { height: "var(--expandable-collapsed-height)" },
+          to: { height: "var(--expandable-content-height)" },
         },
-        "collapsible-up": {
-          from: { height: "var(--collapsible-content-height)" },
-          to: { height: "var(--collapsible-collapsed-height)" },
+        "expandable-up": {
+          from: { height: "var(--expandable-content-height)" },
+          to: { height: "var(--expandable-collapsed-height)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "collapsible-down": "collapsible-down 0.2s ease-out",
-        "collapsible-up": "collapsible-up 0.2s ease-out",
+        "expandable-down": "expandable-down 0.2s ease-out",
+        "expandable-up": "expandable-up 0.2s ease-out",
       },
     },
   },
