@@ -1,33 +1,83 @@
-# Composant ExpandableSection
+# ExpandableDemo component
 
-Ce projet contient un composant `ExpandableSection` réalisé avec React, TypeScript, TailwindCSS et shadcn/ui. Ce composant est une section qui peut être étendue ou réduite par l'utilisateur.
+This project contains an `ExpandableDemo` component built using React, TypeScript, TailwindCSS. This component is a section that can be expanded or reduced with **animation** by the user.
 
-## Fonctionnalités
+## Features
 
-- **Extensible** : L'utilisateur peut étendre la section pour afficher plus de contenu.
-- **Rétractable** : L'utilisateur peut réduire la section pour masquer le contenu.
-- **Animation** : L'expansion et la rétraction de la section sont animées pour une meilleure expérience utilisateur.
+- **Extendable**: The user can expand the section to display more content.
+- **Retractable**: The user can collapse the section to hide content.
+- **Animation**: The expansion and retraction of the section is animated for a better user experience.
 
-## Technologies utilisées
+Demo :
+[expandable-section.vercel.app](https://expandable-section.vercel.app/)
 
-- [React](https://reactjs.org/) : Une bibliothèque JavaScript pour construire des interfaces utilisateur.
-- [TypeScript](https://www.typescriptlang.org/) : Un sur-ensemble typé de JavaScript qui ajoute des types statiques.
-- [TailwindCSS](https://tailwindcss.com/) : Un framework CSS utilitaire pour un développement rapide de l'interface utilisateur.
-- [shadcn/ui](https://github.com/shadcn/ui) : Une bibliothèque d'interface utilisateur pour React.
+## Technologies used
 
-## Utilisation
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
 
-Le composant `ExpandableSection` est situé dans le fichier [src/components/ExpandableSection.tsx](src/components/ExpandableSection.tsx). Vous pouvez l'utiliser dans votre application React comme n'importe quel autre composant React.
+## Usage
+
+The `ExpandableDemo` component is located in the [src/components/ExpandableDemo.tsx](src/components/ExpandableDemo.tsx) file. You can use it in your React application just like any other React component.
 
 ```tsx
-import ExpandableSection from './components/ExpandableSection';
+import ExpandableDemo from './components/ExpandableDemo';
 
 function App() {
  return (
   <div>
-   <ExpandableSection />
+   <ExpandableDemo />
   </div>
  );
 }
 
 export default App;
+```
+
+### Attributes
+
+- `lineClamp`: Number of lines to display truncated text. Default: `2`
+
+Accepts:
+
+- Number: `1` to `6`
+- String: `'none'`
+
+#### Requirements
+
+`tailwind.config.js` must include the following:
+
+```js
+extend: {
+    keyframes: {
+        "expandable-down": {
+            from: { height: "var(--expandable-collapsed-height)" },
+            to: { height: "var(--expandable-content-height)" },
+        },
+        "expandable-up": {
+            from: { height: "var(--expandable-content-height)" },
+            to: { height: "var(--expandable-collapsed-height)" },
+        },
+    },
+    animation: {
+        "expandable-down": "expandable-down 0.2s ease-out",
+        "expandable-up": "expandable-up 0.2s ease-out",
+    },
+    safelist: [
+        "line-clamp-1",
+        "line-clamp-2",
+        "line-clamp-3",
+        "line-clamp-4",
+        "line-clamp-5",
+        "line-clamp-6",
+        "line-clamp-none",
+  ],
+}
+```
+
+You need :
+
+- `expandable.tsx` at [`src/components/ui/expandable.tsx`](src/components/ui/expandable.tsx)
+- `button.tsx` at [`src/components/ui/button.tsx`](src/components/ui/button.tsx) from [shadcn/ui](https://ui.shadcn.com/docs/components/button)
+- `TypographyP` component at [`src/components/ui/typographies.tsx`](src/components/ui/typographies.tsx) or replace it with a simple `<p>` *HTMLParagraphElement*
