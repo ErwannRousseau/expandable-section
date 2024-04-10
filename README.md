@@ -27,7 +27,13 @@ import ExpandableDemo from './components/ExpandableDemo';
 function App() {
  return (
   <div>
-   <ExpandableDemo />
+   <ExpandableDemo lineClamp={1}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+        consectetur, libero nec ultricies tincidunt, nunc felis tincidunt
+        turpis, vel tincidunt nunc ante sit amet elit. Nulla facilisi. Donec
+        malesuada, libero nec ultricies tincidunt, nunc felis tincidunt turpis,
+        vel tincidunt nunc ante sit amet elit. Nulla facilisi. Donec malesuada,
+      </ExpandableDemo>
   </div>
  );
 }
